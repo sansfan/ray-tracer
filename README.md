@@ -1,5 +1,8 @@
 # ray-tracer
 
+WARNING: This IS THE WRONG VERSION AND IS EXTREMELY BROKEN, FIX IT WITH THE BACKUPS ON MY OLD COMPUTER. I was experimenting with a few lighting things and after fiddling with values I broke it. Use one of the backups and upload that.
+
+
 This is a simple ray tracer that I will use to develop my knowledge of computer graphics.
 
 Currently it can only do the very simple task of ray tracing spheres of various colors without shading.
