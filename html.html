@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ray Tracer Test</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body id="body">
+	<canvas width="1000" height="1000" id="canvas">You can't use a raytracer without canvas dummy.</canvas>
+	<div class="range-container">
+		<input type="range" min="0" max="200" value="122" class="slider" id="sphere-x">
+		<input type="range" min="0" max="200" value="33" class="slider" id="sphere-y">
+		<input type="range" min="200" max="800" value="500" class="slider" id="sphere-z">
+		<input type="checkbox" id="hideall">
+		<button id="draw" onclick="draw()">Draw</button>
+		<textarea id="inject">Inject any HTML code you want here, there's a p element which innerHTML changes to this textarea</textarea>
+		<p id="injectee">HTML code shows here</p>
+	</div>
+	
+	<script src="script.js"></script>
+</body>	
+</html>

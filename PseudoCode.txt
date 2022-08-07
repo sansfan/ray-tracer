@@ -1,0 +1,157 @@
+Introduction:
+
+This file will be a place for me to write Javascript/python/C# inspired pseudocode in order to figure out a way to display ray tracing. I currently have zero experience in linear algebra or precalculus, I am currently in my algebra II class(started working on it in my 1st bell history). I hope this will be as good of a project as kmath was. 
+
+P.S. The underscore line separators only look good on full screen notepad on a 1900x1080 screen.
+
+______________________________________________________________________________________________________________________
+ASSUMPTIONS:
+
+
+Y is up
+all coordinates are just units, doesn't matter as long as it's consistent
+canvas is going to be 500x500 pixels
+viewport is going to be 500x500 units
+camera is at 0,0,0 and is facing down the z axis
+viewport is 500 units away from the camera, perpendicular to z axis, Z axis intersects center of viewport
+
+Each pixel is going to be a 1 unit square
+
+
+
+______________________________________________________________________________________________________________________
+Code:
+
+mainLoop = function() {
+
+	canvasLength, viewportLength, viewportWidth, canvasWidth = 500
+
+	resX = 1 //the x position of pixel on canvas we're going to draw
+	resY = 1 //the y pos of pixel
+
+
+	x2 = -viewportWidth/2 + resX //goes to the 
+
+	y2 = -viewportLength/2 + resY //bottom left of the viewport, adding resX and resY finds the pixel needed, too lazy to make it center, its gonna be in the corner for now
+ 
+	objects = [] //any created objects go here to be iterated and checked if a ray passes(yes I know that its not performant, but its proof of concept) [wont use until later]
+	
+
+	blueSphere = createSphere(0, 0, 700, 100, "blue")
+
+
+	color = traceRay(0, 0, 0, x2, y2, 500) //assume camera is at 0,0,0 and we know that viewport is 500 units away on Z
+
+	drawPixel(resX, resY, color)
+
+	
+
+	if (resX > canvasWidth) { 
+
+		resY = resY + 1
+
+	} else {
+
+		resX = resX + 1
+	}
+
+	if (resX > canvasLength OR resY > canvasWidth) { //when its done it'll stop, i dont have the thinking capacity to think which one will come first, so yeah... OR operator kinda unnecessary
+
+		break
+
+	}
+}
+
+___________________________________________________________________________________________________________________
+
+Methods:
+
+drawPixel(x, y, color) {
+	/**draws pixel at position (x, y), with origin being at bottom left**/ 
+	canvas = document.getElementById("canvas")
+	ctx = canvas.getContext("2d")
+	ctx.drawPixel(x, y, color) //color should be in hex form as a string
+}
+
+traceRay(X1, Y1, Z1, X2, Y2, Z2) {
+	 /** traces ray from X1, Y1, Z1(the camera or any other starting point) to X2, Y2, Z2(the direction of the ray)
+	returns color that it touches 
+	Well crap, i dont know linear algebra?????, Jerry if you're reading this, please help me!!!!!!! :((((((((( **/
+		
+}
+
+
+
+createSphere(x, y, z, radius, color) {
+	/**creates a sphere at xyz with radius of radius and color of color **/
+	this.equation = [insert equation here]
+	this.x = x
+	this.y = y
+	this.z = z
+	this.xyz = (x, y, z)
+	this.radius = radius
+	this.color = color
+}
+
+________________________________________________________________________________________________________________
+
+Variables:
+
+resX = current pixel the raytracer is trying to trace
+resY = same as above
+
+________________________________________________________________________________________________________________
+
+Syntax of Pseudocode:
+
+comments are defined using this:
+
+/**this is a comment **/
+
+functions are defined like this:
+
+functionName(arg1, arg2...) {
+	exampleVariable = 1
+	exampleFunc()
+	return exampleVariable
+}
+
+You can see that its basically javascript without semicolons and "function" statements, although if you want to assign a function to a variable it should go like this:
+
+varFunc = function() {print(1)}
+
+variables are defined just like python variables, their type is assumed
+
+operators are going to just be the word of the operator in caps:
+
+1 OR 2 AND 3 NOT 4 XOR 5 
+
+True and False are going to be with the starting letter capitalized, they should be reserved keywords and can represent both 1/0 or True/False
+
+mathematical functions are going to go like this:
+
+mod(value)
+
+they should be guessable just by the name of the function so they dont need to be defined.
+
+for conditional statements, they go like this:
+
+If/while (condition) {
+	exampleCode = 1
+}
+
+for loops are going to be harder, i'll just say they can be both the python and C implementation depending on how its worded
+
+C implementation:
+
+for (i=0, i > 40, i++) {
+	exampleCode = 1
+}
+
+python implementation:
+
+for (i in list) {
+	print(i)
+}
+
+

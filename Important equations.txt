@@ -1,0 +1,21 @@
+This is a quadratic equation that describes the intersection of a line and a sphere. a, b, c is the direction the line is going, in other words if you translated the line to standard position, it would pass through this point. _ will denote a subscript. x_1, y_1, z_1 is a point that the line passes through. x_0, y_0, z_0 are the coordinates of the sphere's center. r is the sphere's radius. t is a constant that describes where on the line. 
+
+Equation: 
+
+(a^2 + b^2 + c^2)t^2 + 2(ax_1 - ax_0 + by_1 - by_0 + cz_1 - cz_0)t + (x_1^2 + x_0^2 - 2x_0x_1 + y_1^2 + y_0^2 - 2y_0y_1 + z_1^2 + z_0^2 -2z_0z_1 - r^2) = 0
+
+
+Details and how I found it: 
+
+The equations for a line in 3d are:
+
+x = x_1 + ta
+
+y = y_1 + tb
+
+z = z_1 + tc
+
+
+The equation for a sphere is (x - x_0)^2 + (y - y_0)^2 + (z - z_0)^2 = r^2
+
+I substituted the x, y, z values in the sphere equation with the line equation. The goal, what we want to find, is the value of t. I expanded the equation by doing the squares. 
